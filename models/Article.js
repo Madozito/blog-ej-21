@@ -26,4 +26,5 @@ class Article extends Model {
   }
 }
 
+
 module.exports = Article;
