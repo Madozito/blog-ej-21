@@ -1,1 +1,1 @@
-// Creamos el index.js
+// Creamos el index

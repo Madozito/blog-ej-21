@@ -1,0 +1,25 @@
+{
+  "name": "blog-ej-21",
+  "version": "1.0.0",
+  "description": "Blog del Ejercicio 21 Sprint 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Madozito/blog-ej-21.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Madozito/blog-ej-21/issues"
+  },
+  "homepage": "https://github.com/Madozito/blog-ej-21#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mysql2": "^3.1.2"
+  }
+}
