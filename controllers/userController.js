@@ -1,7 +1,8 @@
 const { User } = require("../models");
 
 // Display a listing of the resource.
-async function index(req, res) {}
+async function index(req, res) {
+}
 
 // Display the specified resource.
 async function show(req, res) {}
