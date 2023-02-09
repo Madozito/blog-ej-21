@@ -1,6 +1,4 @@
 const db = require("./models");
-// Import de faker para generar data falsa
-const { faker } = require('@faker-js/faker');
 
 module.exports = async () => {
   // Crear tablas:
