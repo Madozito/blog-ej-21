@@ -6,7 +6,8 @@ const dbInitialSetup = require("./dbInitialSetup");
 const APP_PORT = process.env.APP_PORT || 3000;
 const app = express();
 
-app.use(express.static("public"));
+
+app.use('/public', express.static("public"))//especifiqué que  los archivos estaticos se sirven el la lista /public
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
@@ -19,3 +20,4 @@ app.listen(APP_PORT, () => {
   console.log(`\n[Express] Servidor corriendo en el puerto ${APP_PORT}.`);
   console.log(`[Express] Ingresar a http://localhost:${APP_PORT}.\n`);
 });
+  
