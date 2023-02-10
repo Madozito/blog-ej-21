@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
+const { sequelize } = require(".");
 
 class Article extends Model {
   static initModel(sequelize) {
@@ -13,6 +14,9 @@ class Article extends Model {
           type: DataTypes.STRING,
         },
         content: {
+          type: DataTypes.TEXT,
+        },
+        author: {
           type: DataTypes.TEXT,
         },
       },
