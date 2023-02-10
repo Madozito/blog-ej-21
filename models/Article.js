@@ -19,6 +19,9 @@ class Article extends Model {
         author: {
           type: DataTypes.TEXT,
         },
+        image: {
+          type: DataTypes.STRING,
+        },
       },
       {
         sequelize,
@@ -29,6 +32,5 @@ class Article extends Model {
     return Article;
   }
 }
-
 
 module.exports = Article;
