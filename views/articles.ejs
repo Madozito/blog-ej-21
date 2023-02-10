@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Articles</title>
+    <%- include("partials/bootstrapcss") %>
+        <!-- CSS Font Awesome -->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+  </head>
+  <body>
+    <%- include("partials/navbar") %>
+    <div class="container m-auto">
+        <div class="d-flex justify-content-between m-3 align-items-center text-center">
+          <h2>Articles</h2>
+          <a href="/usuarios/crear"><button class="btn btn-success btn-m">Nuevo</button></a>
+        </div>
+  
+        <table class="table border shadow table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Title</th>
+              <th scope="col">Content</th>
+              <th scope="col">Image</th>
+              <th scope="col">createdAt</th>
+              <th scope="col">Author</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (const article of articles) { %>
+            <tr>
+              <th scope="row"><%= article.id %></th>
+              <td><%= article.title %></td>
+              <td><%= article.content %></td>
+              <td><%= article.image %></td>
+              <td><%= article.createdAt %></td>
+              <td><%= article.author %></td>
+              <td>
+                <a href="/usuarios/editar/<%= article.id %>">
+                <button class="btn btn-primary">Editar</button></a>
+                <a href="/usuarios/eliminar/<%= article.id %>">
+                <button class="btn btn-danger">Eliminar</button></a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="footer text-center">
+      <%- include("partials/footer") %>
+    </div>
+    
+    <%- include("partials/bootstrapjs") %>
+  </body>
+</html>
