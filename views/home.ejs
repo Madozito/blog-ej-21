@@ -8,22 +8,20 @@
     <%- include("partials/bootstrapcss") %>
   </head>
   <body>
-    
-    <h1>Funciona la home</h1>
-<!-- for (const article of articles) { -->
+    <%- include("partials/navbar") %>
+   <% for (const article of articles) { %>
+    <div class="container">
+
+
+
+    </div>
+    <h2><%=article.title%></h2>
+    <span>Creado por: <%=article.author%> el <%=article.createdAt%></span>
+    <hr>
+
    
-      <table class="table border shadow table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Edad</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-     
- 
+
+    <%}%>
 
 
 
