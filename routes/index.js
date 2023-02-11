@@ -18,7 +18,7 @@ const commentRoutes = require("./commentRoutes");
  */
 
 const publicRoutes = require("./publicRoutes");
-const privateRoutes = require("./privateRoutes");
+const adminRoutes = require("./adminRoutes");
 
 module.exports = (app) => {
   /**
@@ -33,5 +33,5 @@ module.exports = (app) => {
   app.use("/comentarios", commentRoutes);
 
   app.use("/", publicRoutes);
-  app.use("/panel", privateRoutes);
+  app.use("/admin", adminRoutes);
 };

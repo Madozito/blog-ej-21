@@ -1,14 +1,27 @@
 const { Article } = require("../models");
 
 // Display a listing of the resource.
-async function index(req, res) {
+async function showDetail(req, res) {
+
 }
+
+// Display the specified resource.
+async function createComment(req, res) {
+  
+}
+
+
+/* // Display a listing of the resource.
+async function index(req, res) {}
 
 // Display the specified resource.
 async function show(req, res) {}
 
 // Show the form for creating a new resource
-async function create(req, res) {}
+const create =  function (req, res) {
+  console.log("holis")
+  res.render("new")
+}
 
 // Store a newly created resource in storage.
 async function store(req, res) {}
@@ -20,17 +33,19 @@ async function edit(req, res) {}
 async function update(req, res) {}
 
 // Remove the specified resource from storage.
-async function destroy(req, res) {}
+async function destroy(req, res) {} */
 
 // Otros handlers...
 // ...
 
 module.exports = {
-  index,
+  showDetail,
+  createComment
+/*   index,
   show,
   create,
   store,
   edit,
   update,
-  destroy,
+  destroy, */
 };

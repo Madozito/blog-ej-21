@@ -7,29 +7,23 @@
     <title>Home</title>
     <%- include("partials/bootstrapcss") %>
         <!-- CSS Font Awesome -->
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      />
+       
   </head>
   <body>
     <%- include("partials/navbar") %>
     <%- include("partials/hero") %>
    
-    <div class="container">
-      <div class="text-center">
+    <div class="home-container m-auto">
+      <div class="text">
 
       <% for (const article of articles) { %>
-        <h2><%=article.title%></h2>
+        <h4><%=article.title%></h4>
         <span>Creado por: <%=article.author%> el <%=article.createdAt%></span>
         <hr>
         <%}%>
-        <%- include("partials/footer") %>
       </div>
     </div>
+    <%- include("partials/footer")%>
     
     <%- include("partials/bootstrapjs") %>
   </body>

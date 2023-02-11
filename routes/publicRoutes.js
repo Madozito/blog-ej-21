@@ -8,10 +8,10 @@ const pagesController = require("../controllers/pagesController");
 
 router.get("/", pagesController.showHome);
 
-router.get("/articles",pagesController.showArticle);
+/* router.get("/articles",pagesController.showArticle); */
 
-router.get("/contact", pagesController.showContact);
+/* router.get("/contact", pagesController.showContact);
 
-router.get("/about-us",pagesController.showAboutUs);
+router.get("/about-us",pagesController.showAboutUs); */
 
 module.exports = router;

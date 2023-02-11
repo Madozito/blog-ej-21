@@ -23,10 +23,10 @@ async function showHome(req, res) {
   res.render("home",{ articles });
 }
 
-async function showArticle(req, res) {
+/* async function showArticle(req, res) {
   const articles = await Article.findAll();
   res.render("articles",{ articles });
-}
+} */
  
 
 async function showContact(req, res) {
@@ -44,6 +44,5 @@ module.exports = {
   showHome,
   showContact,
   showAboutUs,
-  showArticle,
-
 };
+
