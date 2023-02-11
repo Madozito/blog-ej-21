@@ -8,9 +8,9 @@ module.exports = async () => {
 
   for (let i = 0; i < 5; i++) {
     articles.push({
-      title: faker.lorem.sentence(5),
-      content: faker.lorem.sentence(5),
-      author: faker.name.firstName(),
+      title: faker.lorem.sentence(3),
+      content: faker.lorem.sentence(30),
+      author: faker.name.findName(),
       image: faker.image.avatar(),
 
     });
