@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <%- include("partials/bootstrapcss") %>
+</head>
+<body>
+    <%- include("partials/navbar") %>
+    <div class="container">
+        <div class="formulario shadow p-4">
+          <form action="/admin/editar/:id" method="POST">
+            <h2>Modificar Articulo</h2>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                name="title"
+                aria-describedby="emailHelp"
+                placeholder="Ingresar titulo..."
+                value=""
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Content</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="content"
+                name="content"
+                placeholder="Ingresar contenido..."
+                value=""
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Author</label>
+              <input
+                type="number"
+                class="form-control"
+                id="author"
+                name="author"
+                placeholder="Ingresar autor..."
+                value=""
+              />
+            </div>
+            <button type="submit" class="btn btn-success mb-4">Modificar</button>
+          </form>
+        </div>
+        <div class="mt-4">
+          <a href="/usuarios" class="text-decoration-none">← Volver</a>
+        </div>
+      </div>
+
+    <%- include("partials/footer") %>
+    <%- include("partials/bootstrapjs") %>
+    
+</body>
+</html>

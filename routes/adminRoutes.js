@@ -9,5 +9,6 @@ router.get("/", adminController.showArticles)
 router.get("/nuevo", adminController.showCreateForm);
 router.get("/eliminar/:id", adminController.deleteId)
 router.post("/nuevo",adminController.createId);
+router.get("/editar/:id",adminController.showEdit)
 
 module.exports = router 

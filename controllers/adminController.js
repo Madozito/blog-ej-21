@@ -11,6 +11,10 @@ const showCreateForm = function (req, res) {
   res.render("new");
 };
 
+async function showEdit(req, res) {
+  console.log("Editar")
+  res.render("edit");
+}
 
 async function deleteId(req, res) {
   Article.destroy({
@@ -21,23 +25,23 @@ async function deleteId(req, res) {
 
 
 async function createId (req,res) {
-  Article.create({
+
+   await Article.create({
     title: req.body.title,
     content: req.body.content,
     author: req.body.author,
     image: req.body.image
   });
+
     return res.redirect("/admin");
 
 }
-
-
-
 
 
 module.exports = {
   showCreateForm,
   showArticles,
   deleteId,
-  createId
+  createId,
+  showEdit
 };

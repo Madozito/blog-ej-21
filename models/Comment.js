@@ -13,9 +13,7 @@ class Comment extends Model {
         content: {
           type: DataTypes.TEXT,
         },
-        articleId: {
-          type: DataTypes.BIGINT.UNSIGNED,
-        },
+       
       },
       {
         sequelize,

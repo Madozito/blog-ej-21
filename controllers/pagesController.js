@@ -17,6 +17,7 @@
  */
 
 const { Article } = require("../models");
+const { Comment } = require("../models");
 
 async function showHome(req, res) {
   const articles = await Article.findAll();
@@ -27,9 +28,10 @@ async function showArticleContent(req, res) {
   const articleId= req.params.id
   const article = await Article.findOne({
     where:{id:articleId},
+    include:Comment
     
-  
   })
+  console.log(article.comments[0].content)
   res.render("article-content",{ article });
 
 }
