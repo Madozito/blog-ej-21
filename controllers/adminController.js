@@ -24,7 +24,7 @@ async function deleteId(req, res) {
 }
 
 
-async function createId (req,res) {
+async function createArticle (req,res) {
 
    await Article.create({
     title: req.body.title,
@@ -42,6 +42,6 @@ module.exports = {
   showCreateForm,
   showArticles,
   deleteId,
-  createId,
+  createArticle,
   showEdit
 };

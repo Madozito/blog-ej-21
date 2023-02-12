@@ -8,7 +8,7 @@ const adminController = require("../controllers/adminController");
 router.get("/", adminController.showArticles)
 router.get("/nuevo", adminController.showCreateForm);
 router.get("/eliminar/:id", adminController.deleteId)
-router.post("/nuevo",adminController.createId);
+router.post("/nuevo",adminController.createArticle);
 router.get("/editar/:id",adminController.showEdit)
 
 module.exports = router 
