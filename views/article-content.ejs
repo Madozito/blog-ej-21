@@ -4,25 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Contenido</title>
     <%- include("partials/bootstrapcss") %>
         <!-- CSS Font Awesome -->
        
   </head>
   <body>
     <%- include("partials/navbar") %>
-    <%- include("partials/hero") %>
-   
-    <div class="home-container m-auto">
-      <div class="text">
-
-      <% for (const article of articles) { %>
-        <h4><a href="/articulos/<%=article.id%>"><%=article.title%></a></h4>
-        <span>Creado por: <%=article.author%> el <%=article.createdAt%></span>
-        <hr>
-        <%}%>
-      </div>
+    <!-- HERO PART -->
+    
+<div id="hero">
+    <img src="./public/img/libroHERO.jpg" alt="" class="hero-img img-fluid" />
+    <div class="centrado">
+        <h1 class="ha-the-blog"><%= article.title %></h1>
+        <p class="blog-ha">Creado por <%= article.author%> el <%=article.createdAt%> </p>
     </div>
+</div>
+
+
+ 
+
     <%- include("partials/footer")%>
     <%- include("partials/bootstrapjs") %>
   </body>

@@ -7,5 +7,9 @@ module.exports = async () => {
 
   // Ejecutar seeders (datos de prueba):
   await require("./seeders/articleSeeder")();
-  console.log("[Database] ¡Los datos de prueba fueron insertados!");
+  console.log("[Database] ¡Los datos de articulos fueron insertados!");
+
+  // Ejecutar seeders (comments):
+  await require("./seeders/commentSeeders")();
+  console.log("[Database] ¡Los datos de comentarios fueron insertados!");
 };

@@ -5,7 +5,7 @@ const adminController = require("../controllers/adminController");
 // Rutas relacionadas al panel de control (Admin) 3.4:
 // ...
 
-router.get("/articulos", adminController.showArticles)
-router.get("/articulos/nuevo", adminController.showCreateForm);
+router.get("/", adminController.showArticles)
+router.get("/nuevo", adminController.showCreateForm);
 
 module.exports = router 

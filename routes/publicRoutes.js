@@ -8,6 +8,9 @@ const pagesController = require("../controllers/pagesController");
 
 router.get("/", pagesController.showHome);
 
+router.get("/articulos/:id", pagesController.showArticleContent);
+
+
 /* router.get("/articles",pagesController.showArticle); */
 
 /* router.get("/contact", pagesController.showContact);

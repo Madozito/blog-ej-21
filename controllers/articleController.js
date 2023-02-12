@@ -1,9 +1,7 @@
 const { Article } = require("../models");
 
 // Display a listing of the resource.
-async function showDetail(req, res) {
 
-}
 
 // Display the specified resource.
 async function createComment(req, res) {
@@ -39,8 +37,9 @@ async function destroy(req, res) {} */
 // ...
 
 module.exports = {
-  showDetail,
-  createComment
+  /*showDetail*/
+  createComment,
+
 /*   index,
   show,
   create,
