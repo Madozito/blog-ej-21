@@ -17,8 +17,8 @@
       <div class="text">
 
       <% for (const article of articles) { %>
-        <h4><a href="/articulos/<%=article.id%>"><%=article.title%></a></h4>
-        <span>Creado por: <%=article.author%> el <%=article.createdAt%></span>
+        <h4 id="articulo"><a class="text-decoration-none text-dark" href="/articulos/<%=article.id%>"><%=article.title%></a></h4>
+        <span class="text-black-50 fst-italic">Creado por: <%=article.author%> el <%=article.createdAt%></span>
         <hr>
         <%}%>
       </div>
