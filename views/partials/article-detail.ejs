@@ -1,7 +1,15 @@
 <div class="container">
-   <!--  content
+    
+  
+    <%= article.content %> 
 
-    comentarios -->
+    <h3>Comentarios:</h3>
+    <ul>
+        <% for(const comment of article.comments){ %>
+            <li> <%= comment.content %> </li>
+        <% } %>
+    </ul>
+
     <div class="mb-3">
         <h4>Add your comment</h4>
         <label for="exampleFormControlInput1" class="form-label">Name</label>
@@ -14,3 +22,5 @@
         </div>
       </div>
 </div>
+
+   

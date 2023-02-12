@@ -31,7 +31,7 @@ async function showArticleContent(req, res) {
     include:Comment
     
   })
-  console.log(article.comments[0].content)
+  // console.log(article.comments[0].content)
   res.render("article-content",{ article });
 
 }
