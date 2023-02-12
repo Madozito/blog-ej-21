@@ -1,4 +1,4 @@
-/* const { Comment } = require("../models");
+const { Comment } = require("../models");
 
 async function createComment (req,res) {
 
@@ -9,4 +9,6 @@ async function createComment (req,res) {
  
      return res.redirect("/admin");
  
- } */
+ } 
+
+ module.exports = {createComment}
