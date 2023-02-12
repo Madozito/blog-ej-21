@@ -8,7 +8,7 @@ const app = express();
 
 
 app.use('/public', express.static("public"))//especifiqué que  los archivos estaticos se sirven el la lista /public
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); //me permite mandar data de otros form
 app.set("view engine", "ejs");
 
 // Refresh

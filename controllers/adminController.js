@@ -20,14 +20,14 @@ async function deleteId(req, res) {
 }
 
 
-async function createId(req,res){
+async function createId (req,res) {
   Article.create({
     title: req.body.title,
     content: req.body.content,
     author: req.body.author,
     image: req.body.image
-  })
-  return res.redirect("/admin")
+  });
+    return res.redirect("/admin");
 
 }
 
