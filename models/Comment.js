@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 
+
 class Comment extends Model {
   static initModel(sequelize) {
     Comment.init(
@@ -12,7 +13,9 @@ class Comment extends Model {
         content: {
           type: DataTypes.TEXT,
         },
-
+        articleId: {
+          type: DataTypes.BIGINT.UNSIGNED,
+        },
       },
       {
         sequelize,
@@ -21,6 +24,7 @@ class Comment extends Model {
     );
     return Comment;
   }
+
 }
 
 module.exports = Comment;

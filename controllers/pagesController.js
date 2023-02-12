@@ -26,7 +26,9 @@ async function showHome(req, res) {
 async function showArticleContent(req, res) {
   const articleId= req.params.id
   const article = await Article.findOne({
-    where:{id:articleId}
+    where:{id:articleId},
+    
+  
   })
   res.render("article-content",{ article });
 

@@ -41,8 +41,8 @@
             <td><%= article.createdAt %></td>
             <td><%= article.author %></td>
             <td class="text-center">
-              <a href="/usuarios/editar/<%= article.id %>"> <button class="btn btn-primary btn-sm" id="btn-editar">Editar</button></a>
-              <a href="/usuarios/eliminar/<%= article.id %>"> <button class="btn btn-danger btn-sm">Eliminar</button></a>
+              <a href="/admin/editar/<%= article.id %>"> <button class="btn btn-primary btn-sm" id="btn-editar">Editar</button></a>
+              <a href="/admin/eliminar/<%= article.id %>"> <button class="btn btn-danger btn-sm">Eliminar</button></a>
             </td>
           </tr>
           <% } %>

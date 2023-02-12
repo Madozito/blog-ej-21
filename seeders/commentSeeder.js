@@ -8,14 +8,16 @@ module.exports = async () => {
 
   for (let i = 0; i < 5; i++) {
     comments.push({
-      content: faker.lorem.sentence(20),
+      content: faker.lorem.sentence(40),
+      articleId: faker.datatype.number({
+        min: 1,
+        max: 5,
+      })
     });
-   /*  articleId: faker.datatype.number({
-      min: 1,
-      max: 15,
-    }); */
-  };
-}
 
+  };
   await Comment.bulkCreate(comments);
   console.log("[Database] Se corrió el seeder de Comment.");
+
+}
+
