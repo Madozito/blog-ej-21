@@ -7,5 +7,6 @@ const adminController = require("../controllers/adminController");
 
 router.get("/", adminController.showArticles)
 router.get("/nuevo", adminController.showCreateForm);
-
+/* router.post("/nuevo",adminController.)
+ */
 module.exports = router 

@@ -10,6 +10,12 @@ const showCreateForm = function (req, res) {
   res.render("new");
 };
 
+
+/* const newArticle= async function( req,res){
+  console.log("aloha");
+  
+  req.redirect("/articulos") 
+} */
 module.exports = {
   showCreateForm,
   showArticles,
