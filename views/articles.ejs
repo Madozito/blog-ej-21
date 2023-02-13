@@ -15,10 +15,10 @@
       
       <div class="d-flex justify-content-between m-3 align-items-center text-center">
         <h2>Articles</h2>
-        <a href="/admin/nuevo"><button class="btn btn-success btn-sm">Nuevo</button></a>
+        <a href="/admin/nuevo"><button class="btn btn-success btn-sm">New</button></a>
       </div>
 
-      <table class="tble border shadow table-striped">
+      <table class="tble table-striped">
         <thead>
           <tr>
             <th scope="col-1">Id</th>
@@ -30,7 +30,7 @@
           </tr>
         </thead>
         <tbody>
-          <% let counter= 0%>
+          <% let counter = 0 %>
           <% for (const article of articles) { %>
           <tr <% if (counter %2 ===0){%> class= "grey-background" <%}; counter++; %> >
 
@@ -41,8 +41,8 @@
             <td><%= article.createdAt %></td>
             <td><%= article.author %></td>
             <td class="text-center">
-              <a href="/admin/editar/<%= article.id %>"> <button class="btn btn-primary btn-sm" id="btn-editar">Editar</button></a>
-              <a href="/admin/eliminar/<%= article.id %>"> <button class="btn btn-danger btn-sm">Eliminar</button></a>
+              <a href="/admin/editar/<%= article.id %>"> <button class="btn btn-primary btn-sm" id="btn-editar">Edit</button></a>
+              <a href="/admin/eliminar/<%= article.id %>"> <button class="btn btn-dark btn-sm">Delete</button></a>
             </td>
           </tr>
           <% } %>
@@ -55,3 +55,4 @@
     <%- include("partials/bootstrapjs") %>
   </body>
 </html>
+-d
