@@ -40,7 +40,8 @@
             <% if(article.image.startsWith("https")){%>
               <td><img src="<%=article.image %>"alt="Faker imagenes"></td>
             <%} else{%>
-              <td><img src="img/<%=article.image %>" alt="Imagenes subidas" id="img-subida"></td>
+              <td><img src="img/<%=article.image %>" alt="Imagenes subidas" id="img-subida" style="
+                max-height: 227px;"></td>
             <%}%>
             <td><%= article.createdAt %></td> 
             <td><%= article.author %></td>
