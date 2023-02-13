@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const articleController = require("../controllers/articleController");
+const commentController = require("../controllers/commentController");
 
 
 // Rutas relacionadas a los artículos:
@@ -17,6 +17,6 @@ router.get("/:id", articleController.update);
 router.get("/:id", articleController.destroy); */
 
 //router.get("/:id", articleController.showDetail);
-router.post("/:id/comment", articleController.createComment);
+router.post("/:id/comentarios", commentController.createComment);
 
 module.exports = router;

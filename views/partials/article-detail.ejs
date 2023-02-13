@@ -6,7 +6,8 @@
     <h3>Comentarios:</h3>
     <ul>
         <% for(const comment of article.comments){ %>
-            <li> <%= comment.content %> </li>
+            <li> <p><%= comment.content %> </p></li>
+            <%= comment.author %>
         <% } %>
     </ul>
 
