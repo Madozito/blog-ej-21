@@ -37,8 +37,12 @@
             <th scope="row"><%= article.id %></th>
             <td><%= article.title %></td>
             <td><%= article.content %></td>
-            <td><img src="<%=article.image %>" alt=""></td>
-            <td><%= article.createdAt %></td>
+            <% if(article.image.startsWith("https")){%>
+              <td><img src="<%=article.image %>"alt="Faker imagenes"></td>
+            <%} else{%>
+              <td><img src="img/<%=article.image %>" alt="Imagenes subidas" id="img-subida"></td>
+            <%}%>
+            <td><%= article.createdAt %></td> 
             <td><%= article.author %></td>
             <td class="text-center">
               <a href="/admin/editar/<%= article.id %>"> <button class="btn btn-primary btn-sm" id="btn-editar">Edit</button></a>

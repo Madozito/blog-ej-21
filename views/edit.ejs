@@ -12,7 +12,7 @@
     <div class="container">
         <div class="formulario shadow p-4 mt-4">
           <h2>Modificar Articulo</h2>
-          <form action="/admin/editar/<%=article.id%>?_method=PATCH" method="POST">
+          <form action="/admin/editar/<%=article.id%>?_method=PATCH" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
               <input
@@ -50,9 +50,9 @@
               />
             </div>
             <div class="mb-3">
-              <label for="image" class="form-label">image</label>
+              <label for="image" class="form-label">Image</label>
               <input
-                type="text"
+                type="file"
                 class="form-control"
                 id="image"
                 name="image"

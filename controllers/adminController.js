@@ -1,4 +1,5 @@
 const { Article } = require("../models");
+const formidable = require("formidable");
 
 async function showArticles(req, res) {
   const articles = await Article.findAll();
@@ -26,24 +27,39 @@ async function deleteId(req, res) {
 }
 
 async function createArticle(req, res) {
-  await Article.create({
-    title: req.body.title,
-    content: req.body.content,
-    author: req.body.author,
-    image: req.body.image,
+  console.log(__dirname);
+  const form = formidable({
+    multiples: true,
+    uploadDir: __dirname + "/../public/img",
+    keepExtensions: true,
   });
-
+  form.parse(req, async (err, fields, files) => {
+    await Article.create({
+      title: fields.title,
+      content: fields.content,
+      author: fields.author,
+      image: files.image.newFilename,
+    });
+  });
   return res.redirect("/admin");
 }
 
 async function editArticle(req, res) {
-  const article = await Article.findByPk(req.params.id);
-  await article.update({
-    title: req.body.title,
-    content: req.body.content,
-    author: req.body.author,
-    image: req.body.image,
+  const form = formidable({
+    multiples: true,
+    uploadDir: __dirname + "/../public/img",
+    keepExtensions: true,
   });
+  form.parse(req, async (err, fields, files) => {
+    const article = await Article.findByPk(req.params.id);
+    await article.update({
+      title: fields.title,
+      content: fields.content,
+      author: fields.author,
+      image: files.image.newFilename
+    });
+  });
+
   return res.redirect("/admin");
 }
 
