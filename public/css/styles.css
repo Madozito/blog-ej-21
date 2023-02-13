@@ -84,3 +84,11 @@ background-color: #ececef;
   background-color: #b69b06;
   border: none;
  }
+
+ .contenido-oculto {
+  visibility: hidden;
+ }
+
+ .article-content-size{
+  margin:auto
+ }
