@@ -10,7 +10,7 @@ module.exports = async () => {
     articles.push({
       title: faker.lorem.sentence(11),
       content: faker.lorem.sentence(20),
-      author: faker.name.fullName(),
+      author: faker.name.findName(),
       image: faker.image.avatar(),
 
     });
