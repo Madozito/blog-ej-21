@@ -1,5 +1,6 @@
 .ha-analytics {
     color: white;
+  
   }
   
   #hero {
@@ -31,7 +32,7 @@
   
   .blog-ha {
     font-size: 2rem;
-    color: #0dcaf0
+    color: #b69b06
   }
   
   .copyright {
@@ -72,7 +73,10 @@ background-color: #ececef;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: italic;
   font-size: 1rem;
-  color: #77767d;
+  
+  }
+ 
+ #adminbtn {
+  background-color: #b69b06;
+  border: none;
  }
- 
- 
