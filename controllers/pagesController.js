@@ -24,6 +24,11 @@ async function showHome(req, res) {
   res.render("home",{ articles });
 }
 
+async function showJSON(req,res){
+  const articles = await Article.findAll();
+  return res.json(articles);
+}
+
 async function showArticleContent(req, res) {
   const articleId= req.params.id
   const article = await Article.findOne({
@@ -57,6 +62,7 @@ module.exports = {
   showHome,
   showContact,
   showAboutUs,
-  showArticleContent
+  showArticleContent,
+  showJSON
 };
 
