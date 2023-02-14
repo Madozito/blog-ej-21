@@ -1,29 +1,31 @@
 
 
-<div class="container article-content-size">
+<div class="container-detail m-auto">
      <%= article.content %>
     
-    <h3>Comentarios:</h3>
-    <ul>
-        <% for(const comment of article.comments){ %>
-            <li> <p><%= comment.content %> </p></li>
-            <%= comment.author %>
-        <% } %>
-    </ul>
-    <form action="/articulos/<%- article.id %>/comentarios" method="POST">
-
+     <form action="/articulos/<%- article.id %>/comentarios" method="POST">
+        
         <div class="mb-3">
-            <h4>Add your comment</h4>
-            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <br>
+            <h6>Add your comment</h6>
+            <!-- <label for="exampleFormControlInput1" class="form-label">Name</label> -->
             <input type="text" class="form-control" id="author" name="author" placeholder="Name">
         </div>
         <div class="mb-3">
             <textarea class="form-control" id="content" name="content" rows="3"></textarea>
             <div class="d-grid gap-2">
-                <button class="btn btn-primary mt-4" type="submit">Send</button>
+                <button id="btn-send" class="btn btn-primary mt-4" type="submit">Send</button>
             </div>
         </div>
     </form>
+    <h6>Comentarios ( )</h6>
+    <ul>
+        <% for(const comment of article.comments){ %>
+            <li> <p><%= comment.content %> </p></li>
+            <%= comment.author %>
+            <hr>
+        <% } %>
+    </ul>
 </div>
 
    

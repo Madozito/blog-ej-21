@@ -32,7 +32,7 @@
         <tbody>
           <% let counter = 0 %>
           <% for (const article of articles) { %>
-          <tr <% if (counter %2 ===0){%> class= "grey-background" <%}; counter++; %> >
+          <tr <% if (counter %2 ===0){%> class= "lightYellow-background" <%}; counter++; %> >
 
             <th scope="row"><%= article.id %></th>
             <td><%= article.title %></td>
@@ -56,6 +56,7 @@
     </div>
 
     <%- include("partials/footer") %>
+ 
 
     <%- include("partials/bootstrapjs") %>
   </body>
