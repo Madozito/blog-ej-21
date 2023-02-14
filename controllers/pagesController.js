@@ -1,23 +1,9 @@
-/**
- * Este archivo se utiliza en un proyecto donde se está utlizando server-side
- * rendering (ej: con un motor de templates como EJS). Tiene como objetivo
- * mostrar (renderear) páginas que no están directamente relacionandas con
- * una entidad del proyecto.
- *
- * Ejemplos:
- *   - Página de inicio (Home).
- *   - Página de contacto.
- *   - Página con política de privacidad.
- *   - Página con términos y condiciones.
- *   - Página con preguntas frecuentes (FAQ).
- *   - Etc.
- *
- * En caso de estar creando una API, este controlador carece de sentido y
- * no debería existir.
- */
-
 const { Article } = require("../models");
 const { Comment } = require("../models");
+const {User}= require("../models");
+const formidable = require('formidable');
+
+
 
 async function showHome(req, res) {
   const articles = await Article.findAll();
@@ -41,6 +27,25 @@ async function showArticleContent(req, res) {
 
 }
 
+async function createUser(req, res) {
+  const form = formidable({
+    multiples:true,
+    uploadDir:__dirname + '/../public/img/usersImgs',
+    keepExtensions:true,
+  })
+  form.parse(req,async (err,fields,files)=>{
+    const profileImage = files.profileImg.newFilename;
+    console.log(fields)
+    const newProfile = await User.create({ userName: fields.userName, password: fields.password ,email: fields.email, profileImg:profileImage});
+    res.redirect('/usuarios')
+})}
+
+
+async function logIn(req,res){
+ res.render('login')
+}
+
+
 /* async function showArticle(req, res) {
   const articles = await Article.findAll();
   res.render("articles",{ articles });
@@ -55,6 +60,11 @@ async function showAboutUs(req, res) {
   res.render("aboutUs");
 }
 
+async function showForm(req, res) {
+  res.render('userForm')
+}
+
+
 // Otros handlers...
 // ...
 
@@ -63,6 +73,9 @@ module.exports = {
   showContact,
   showAboutUs,
   showArticleContent,
-  showJSON
+  showJSON,
+  createUser,
+  showForm,
+  logIn,
 };
 
