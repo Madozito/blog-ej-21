@@ -16,24 +16,28 @@ body {
   }
   
   .centrado {
-    position: absolute;
+    position:absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation-name: heroOnloadAnimation;
-    animation-duration: 1s;
+  }
+    /* animation-name: heroOnloadAnimation;
+    animation-duration: 3s;
     animation-iteration-count: unset;
   }
+  
 
   @keyframes heroOnloadAnimation {
 
     0% {
-      transform: translateY(5%);
+      transform: translateY(-45%);
+      transform: translateX(-50%);
     }
     100% {
-      transform: translateY(0%);
+      transform: translateY(-50%);
+      transform: translateX(-50%);
     }
-  }
+  } */
   
   
   .hero-img {
@@ -59,7 +63,7 @@ body {
   
   }
   .grey-background {
-background-color: #ececef;
+background-color:rgb(253, 252, 210);
   }
 
   th {

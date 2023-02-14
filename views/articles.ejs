@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Articles</title>
     <%- include("partials/bootstrapcss") %>
-    <!-- CSS Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+   
   </head>
   <body>
     <%- include("partials/navbar") %>
@@ -32,7 +32,7 @@
         <tbody>
           <% let counter = 0 %>
           <% for (const article of articles) { %>
-          <tr <% if (counter %2 ===0){%> class= "lightYellow-background" <%}; counter++; %> >
+          <tr <% if (counter %2 ===0){%> class= "grey-background" <%}; counter++; %> >
 
             <th scope="row"><%= article.id %></th>
             <td><%= article.title %></td>
@@ -45,9 +45,13 @@
             <%}%>
             <td><%= article.createdAt %></td> 
             <td><%= article.author %></td>
+
             <td class="text-center">
-              <a href="/admin/editar/<%= article.id %>"> <button class="btn btn-primary btn-sm" id="btn-editar">Edit</button></a>
-              <a href="/admin/eliminar/<%= article.id %>"> <button class="btn btn-dark btn-sm">Delete</button></a>
+              
+    <div class="d-grid gap-2 col-1">
+              <a href="/admin/editar/<%= article.id %>" id="btn-send" class=" btn btn-primary" type="button">Edit</a>
+              <a href="/admin/eliminar/<%= article.id %>" id="btn-send" class="btn btn-primary" type="button">Delete</a>
+    </div>
             </td>
           </tr>
           <% } %>
@@ -59,6 +63,7 @@
  
 
     <%- include("partials/bootstrapjs") %>
+
+
   </body>
 </html>
--d
