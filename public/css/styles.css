@@ -7,21 +7,21 @@ body {
   
   }
     #hero {
+      background-image: url("../img/libro2.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 500px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-   
-    /*-webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px)
-    */
   }
   
   .centrado {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-    /* animation-name: heroOnloadAnimation;
+ 
+    
+    animation-name: heroOnloadAnimation;
     animation-duration: 3s;
     animation-iteration-count: unset;
   }
@@ -30,14 +30,14 @@ body {
   @keyframes heroOnloadAnimation {
 
     0% {
-      transform: translateY(-45%);
-      transform: translateX(-50%);
+      transform: translateY(-5%);
+    
     }
     100% {
-      transform: translateY(-50%);
-      transform: translateX(-50%);
+      transform: translateY(0%);
+    
     }
-  } */
+  }
   
   
   .hero-img {
