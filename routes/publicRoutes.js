@@ -6,6 +6,7 @@ const pagesController = require("../controllers/pagesController");
 // ...
 
 router.get("/", pagesController.showHome);
+router.get("/privada", pagesController.showHomeAuth);
 router.get("/registro", pagesController.showForm);
 router.post("/registro", pagesController.createUser);
 router.get("/articulos/:id", pagesController.showArticleContent);
