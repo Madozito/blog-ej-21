@@ -1,20 +1,5 @@
 const { User } = require("../models");
 const formidable = require("formidable");
-const session = require("express-session");
-const passport = require("passport");
-const LocalStrategy = require("passport-local");
-let express = require("express");
-let app = express();
-
-app.use(
-  session({
-    secret: "secret",
-    resave: false,
-    saveUninitialized: false,
-  }),
-);
-
-app.use(passport.session());
 
 // Display a listing of the resource.
 async function index(req, res) {
