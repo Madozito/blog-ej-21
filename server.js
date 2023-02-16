@@ -32,7 +32,7 @@ app.use(methodOverride("_method"));
 // Refresh
 routes(app);
 
-// dbInitialSetup(); // Crea tablas e inserta datos de prueba.
+//dbInitialSetup(); // Crea tablas e inserta datos de prueba.
 
 passport.serializeUser(function (user, done) {
   done(null, user.id);

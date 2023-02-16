@@ -10,9 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
+    <%- include("partials/bootstrapcss") %>
     <title>Document</title>
   </head>
   <body>
+    <%- include("partials/navbar") %>
+    <%- include("partials/hero") %>
     <header>
       <nav>
         <img src="" alt="Logo" />
@@ -36,6 +39,8 @@
       <input id="image" name="profileImg" type="file" class="form-control" />
       <input type="submit" value="Crear" />
     </form>
+    <%- include("partials/footer")%>
+    <%- include("partials/bootstrapjs") %>
     <script src="js/app.js"></script>
   </body>
 </html>

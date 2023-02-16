@@ -39,7 +39,7 @@ async function createUser(req, res) {
       email: fields.email,
       profileImg: profileImage,
     });
-    res.redirect("/usuarios");
+    res.redirect("/");
   });
 }
 
