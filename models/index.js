@@ -15,10 +15,12 @@ const sequelize = new Sequelize(
 const User = require("./User")
 const Comment = require("./Comment")
 const Article = require("./Article")
+const Role = require("./Role")
 
 User.initModel(sequelize);
 Comment.initModel(sequelize);
 Article.initModel(sequelize);
+Role.initModel(sequelize);
 
 
 
@@ -37,11 +39,15 @@ Comment.belongsTo(User)
 User.hasMany(Article)
 Article.belongsTo(User)
 
-// 1 articulo tiene varios comentarios
-// 1 comentario pertebece a un articulo
-
 Article.hasMany(Comment);
 Comment.belongsTo(Article);
+
+Role.hasOne(User)
+User.belongsTo(Role)
+
+
+
+
 
 
 

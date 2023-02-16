@@ -7,6 +7,7 @@ const isAuthenticated = require("../middlewares/isAuthenticated");
 // ...
 
 router.get("/", isAuthenticated, adminController.showArticles);
+//router.get("/admin",isAuthenticated, adminController.admin)
 router.get("/nuevo", isAuthenticated, adminController.showCreateForm);
 router.get("/eliminar/:id", isAuthenticated, adminController.deleteId);
 router.post("/nuevo", isAuthenticated, adminController.createArticle);

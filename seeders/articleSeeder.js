@@ -16,10 +16,10 @@ module.exports = async () => {
         min: 1,
         max: 5,
       }),
-      authorId: faker.datatype.number({
+      /*authorId: faker.datatype.number({
         min: 1,
         max: 5,
-      }),
+      }),*/
     });
   }
 
