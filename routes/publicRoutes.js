@@ -2,16 +2,18 @@ const express = require("express");
 const router = express.Router();
 const pagesController = require("../controllers/pagesController");
 
-
 // Rutas relacionadas a la parte pública del sitio web:
 // ...
 
 router.get("/", pagesController.showHome);
-
+router.get("/privada", pagesController.showHomeAuth);
+router.get("/registro", pagesController.showForm);
+router.post("/registro", pagesController.createUser);
 router.get("/articulos/:id", pagesController.showArticleContent);
-
+router.get("/login", pagesController.logIn);
 router.get("/api/articulos", pagesController.showJSON);
-
+router.post("/login", pagesController.logInPost);
+router.get("/logout", pagesController.logout);
 
 /* router.get("/articles",pagesController.showArticle); */
 

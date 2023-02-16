@@ -7,7 +7,6 @@ async function showArticles(req, res) {
 }
 
 const showCreateForm = function (req, res) {
-  console.log("holis");
   res.render("new");
 };
 
