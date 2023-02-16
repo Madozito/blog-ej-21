@@ -60,6 +60,7 @@ async function logIn(req, res) {
   res.render("articles",{ articles });
 } */
 
+
 const logInPost = passport.authenticate("local", {
   successRedirect: "/admin",
   failureRedirect: "/login",

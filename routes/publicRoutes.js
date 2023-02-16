@@ -9,7 +9,7 @@ router.get("/", pagesController.showHome);
 router.get("/registro", pagesController.showForm);
 router.post("/registro", pagesController.createUser);
 
-router.get("/articulos/:id",isAuthenticated, pagesController.showArticleContent);
+router.get("/articulos/:id", pagesController.showArticleContent);
 router.get("/login", pagesController.logIn);
 router.get("/api/articulos", pagesController.showJSON);
 //

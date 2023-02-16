@@ -36,8 +36,9 @@ async function createArticle(req, res) {
     await Article.create({
       title: fields.title,
       content: fields.content,
-      author: fields.author,
       image: files.image.newFilename,
+      //authorId: req.user.id,
+      
     });
   });
   return res.redirect("/admin");
@@ -61,6 +62,17 @@ async function editArticle(req, res) {
 
   return res.redirect("/admin");
 }
+async function admin(req, res) {
+  const articles = await Article.findAll({
+    order: [["date", "DESC"]],
+    //obtengo el  userid de la cookie utilizando atributo session, para poder mostrar solo los articulos que le pertenecen a ese user.
+    where:{"userId": req.session.passport.user},
+    include: Author,
+  });
+
+
+  res.render("admin", { articles });
+}
 
 module.exports = {
   showCreateForm,
@@ -69,4 +81,5 @@ module.exports = {
   createArticle,
   showEdit,
   editArticle,
+  admin,
 };

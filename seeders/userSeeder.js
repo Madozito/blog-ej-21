@@ -1,4 +1,4 @@
-const { faker } = require("@faker-js/faker");
+/*const { faker } = require("@faker-js/faker");
 const { User } = require("../models");
 const bcrypt = require("bcryptjs");
 
@@ -18,5 +18,5 @@ module.exports = async () => {
   await User.bulkCreate(users);
   console.log("[Database] Se corrió el seeder de Users.");
 
-}
+}*/
 

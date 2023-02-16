@@ -15,8 +15,10 @@ const sequelize = new Sequelize(
 const User = require("./User")
 const Comment = require("./Comment")
 const Article = require("./Article")
+const Author = require("./Author")
 
 User.initModel(sequelize);
+Author.initModel(sequelize);
 Comment.initModel(sequelize);
 Article.initModel(sequelize);
 
@@ -30,14 +32,28 @@ Article.initModel(sequelize);
 // Un articulo tiene muchos comentarios, un comentario pertenece a un articulo
 /*Comment.belongsTo(Article, { notNull: true, foreignKey: { allowNull: false } }); */
 
-
+// 1 articulo tiene varios comentarios
+// 1 comentario pertebece a un articulo
 
 Article.hasMany(Comment);
 Comment.belongsTo(Article);
 
+// 1 autor tiene varios articles
+// 1 articulo pertebece a un autor
+Author.hasMany(Article)
+Article.belongsTo(Author)
+
+// 1 autor tiene varios comentarios
+// 1 comentario pertebece a un autor
+
+Author.hasMany(Comment)
+Comment.belongsTo(Author)
+
+
 module.exports = {
   sequelize,
   User,
+  Author,
   Comment,
   Article,
 };
