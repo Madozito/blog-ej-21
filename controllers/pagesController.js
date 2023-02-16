@@ -26,34 +26,42 @@ async function showArticleContent(req, res) {
 }
 
 async function createUser(req, res) {
-  const form = formidable({
-    multiples: true,
-    uploadDir: __dirname + "/../public/img/usersImgs",
-    keepExtensions: true,
+  const passwordParaHashear = req.body.password;
+  const passwordHasheado = await bcrypt.hash(passwordParaHashear, 8);
+  const nuevoUsuario = await User.create({
+    email: req.body.email,
+    username: req.body.username,
+    password: passwordHasheado,
   });
-  form.parse(req, async (err, fields, files) => {
-    const profileImage = files.profileImg.newFilename;
-    const newProfile = await User.create({
-      userName: fields.userName,
-      password: await bcrypt.hash(fields.password, 8),
-      email: fields.email,
-      profileImg: profileImage,
-    });
-    res.redirect("/");
-  });
+  res.redirect("/");
 }
+
+/*
+async function postRegister(req, res) {
+  const passwordParaHashear = req.body.password;
+  const passwordHasheado = await bcrypt.hash(passwordParaHashear, 10);
+
+  const nuevoUsuario = await Author.create({
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    email: req.body.email,
+    username: req.body.username,
+    password: passwordHasheado,
+  });
+  res.redirect("/")
+}*/
 
 async function logIn(req, res) {
   res.render("login");
-}
 
+}
 /* async function showArticle(req, res) {
   const articles = await Article.findAll();
   res.render("articles",{ articles });
 } */
 
 const logInPost = passport.authenticate("local", {
-  successRedirect: "/privadas",
+  successRedirect: "/admin",
   failureRedirect: "/login",
 });
 
@@ -69,13 +77,14 @@ async function showForm(req, res) {
   res.render("userForm");
 }
 
-async function logout(req, res) {
-  res.send("se hizo logout");
-}
+async function logout(req, res, next){
+  req.logout(function(err) {
+    //if (err) { return next(err); }
+    res.redirect('/');
+  });
+};
 
-async function showHomeAuth(req, res) {
-  res.render("homeProtegido");
-}
+
 
 // Otros handlers...
 // ...
@@ -91,5 +100,6 @@ module.exports = {
   logIn,
   logInPost,
   logout,
-  showHomeAuth,
+  //showHomeAuth,
+ 
 };

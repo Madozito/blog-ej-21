@@ -23,21 +23,10 @@ app.use(
   }),
 );
 
-app.use(express.static(path.join(__dirname, "public"))); //especifiqué que  los archivos estaticos se sirven el la lista /public
-app.use(express.urlencoded({ extended: true })); //me permite mandar data de otros form
-app.set("view engine", "ejs");
-// override with POST having ?_method=DELETE
-app.use(methodOverride("_method"));
+// 3) Es importante que esto se ejecute luego del middleware session anterior
+app.use(passport.session());
 
-// Refresh
-routes(app);
-
-//dbInitialSetup(); // Crea tablas e inserta datos de prueba.
-
-passport.serializeUser(function (user, done) {
-  done(null, user.id);
-});
-
+//4)
 passport.use(
   new LocalStrategy(
     { usernameField: "email", passwordField: "password" },
@@ -61,6 +50,33 @@ passport.use(
     },
   ),
 );
+
+passport.serializeUser(function(user,cb){
+  cb(null, user.id)
+});
+
+passport.deserializeUser(async function(id,cb){
+  try {
+      const user = await User.findByPk(id);
+      cb(null,user); // req.user
+  } catch (error) {
+      cb(error);
+      
+  }
+})
+
+
+app.use(express.static(path.join(__dirname, "public"))); //especifiqué que  los archivos estaticos se sirven el la lista /public
+app.use(express.urlencoded({ extended: true })); //me permite mandar data de otros form
+app.set("view engine", "ejs");
+// override with POST having ?_method=DELETE
+app.use(methodOverride("_method"));
+
+// Refresh
+routes(app);
+
+//dbInitialSetup(); // Crea tablas e inserta datos de prueba.
+
 
 // passport.serializeUser((user, cb) => {
 //   cb(null, user.id);
