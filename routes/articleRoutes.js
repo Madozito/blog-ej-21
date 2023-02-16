@@ -16,6 +16,6 @@ router.get("/:id", articleController.update);
 router.get("/:id", articleController.destroy); */
 
 //router.get("/:id", articleController.showDetail);
-router.post("/:id/comentarios",commentController.createComment);
+router.post("/:id/comentarios",isAuthenticated,commentController.createComment);
 
 module.exports = router;

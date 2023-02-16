@@ -31,6 +31,8 @@ async function createUser(req, res) {
   const nuevoUsuario = await User.create({
     email: req.body.email,
     username: req.body.username,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
     password: passwordHasheado,
   });
   res.redirect("/");

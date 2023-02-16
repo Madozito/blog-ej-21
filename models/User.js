@@ -10,6 +10,15 @@ class User extends Model {
           primaryKey: true,
           autoIncrement: true,
         },
+        firstname:{
+
+        type: DataTypes.STRING,
+        
+        },
+
+        lastname:{
+          type: DataTypes.STRING,
+        },
         username: {
           type: DataTypes.STRING,
         },

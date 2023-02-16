@@ -1,5 +1,6 @@
-const { Article } = require("../models");
+const { Article, User, Comment  } = require("../models");
 const formidable = require("formidable");
+
 
 async function showArticles(req, res) {
   const articles = await Article.findAll();
@@ -37,7 +38,6 @@ async function createArticle(req, res) {
       title: fields.title,
       content: fields.content,
       image: files.image.newFilename,
-      //authorId: req.user.id,
       
     });
   });
@@ -66,8 +66,8 @@ async function admin(req, res) {
   const articles = await Article.findAll({
     order: [["date", "DESC"]],
     //obtengo el  userid de la cookie utilizando atributo session, para poder mostrar solo los articulos que le pertenecen a ese user.
-    where:{"userId": req.session.passport.user},
-    include: Author,
+    where:{"authorId": req.session.passport.user},
+    include: User,
   });
 
 

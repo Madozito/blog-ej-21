@@ -12,7 +12,14 @@ module.exports = async () => {
       content: faker.lorem.sentence(50, '\n'),
       author: faker.name.fullName(),
       image: faker.image.avatar(),
-
+      userId: faker.datatype.number({
+        min: 1,
+        max: 5,
+      }),
+      authorId: faker.datatype.number({
+        min: 1,
+        max: 5,
+      }),
     });
   }
 
