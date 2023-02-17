@@ -17,7 +17,9 @@
         <h2>Articles</h2>
       </div>
       <div class="d-flex justify-content-end align-items-center text-center">
-      <a href="/admin/nuevo"><button id="new-btn" class="btn btn-success btn-sm">New</button></a>
+        <% if(user.roleCode >= 200) { %>
+          <a href="/admin/nuevo"><button id="new-btn" class="btn btn-success btn-sm">Crear</button></a>
+          <%}%>
       <a href="/logout"><button class="btn btn-success btn-sm">logout</button></a>
     </div>
       <table class="tble table-striped">

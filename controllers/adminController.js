@@ -4,9 +4,10 @@ const formidable = require("formidable");
 
 async function showArticles(req, res) {
   const articles = await Article.findAll();
-  res.render("articles", { articles });
+  const user = await User.findAll();
+  res.render("articles", { articles, user });
 }
-
+// El middleware va a estar aca
 const showCreateForm = function (req, res) {
   res.render("new");
 };

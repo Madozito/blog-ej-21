@@ -51,20 +51,19 @@ passport.use(
   ),
 );
 
-passport.serializeUser(function(user,cb){
-  cb(null, user.id)
+passport.serializeUser(function (user, cb) {
+  cb(null, user.id);
 });
 
-passport.deserializeUser(async function(id,cb){
+passport.deserializeUser(async function (id, cb) {
   try {
-      const user = await User.findByPk(id);
-      cb(null,user); // req.user
+    const user = await User.findByPk(id);
+    //user.role.code
+    cb(null, user); // req.user
   } catch (error) {
-      cb(error);
-      
+    cb(error);
   }
-})
-
+});
 
 app.use(express.static(path.join(__dirname, "public"))); //especifiqué que  los archivos estaticos se sirven el la lista /public
 app.use(express.urlencoded({ extended: true })); //me permite mandar data de otros form
@@ -75,8 +74,7 @@ app.use(methodOverride("_method"));
 // Refresh
 routes(app);
 
-dbInitialSetup(); // Crea tablas e inserta datos de prueba.
-
+//dbInitialSetup(); // Crea tablas e inserta datos de prueba.
 
 // passport.serializeUser((user, cb) => {
 //   cb(null, user.id);

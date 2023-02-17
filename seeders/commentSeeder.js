@@ -6,7 +6,7 @@ faker.locale = "es";
 module.exports = async () => {
   const comments = [];
 
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 10; i++) {
     comments.push({
       content: faker.lorem.sentence(40),
       author: faker.name.fullName(),

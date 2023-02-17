@@ -8,7 +8,7 @@ module.exports = async () => {
   const users = [];
 const roleNames= ["lector","escritor","editor","administrador"]
 const roleCodes= [100, 200, 300, 400]
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 10; i++) {
     const randomNumber = faker.datatype.number({min:0 ,max:4})
     users.push({
         firstname: faker.name.firstName(),
