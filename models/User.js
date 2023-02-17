@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 
 class User extends Model {
   static initModel(sequelize) {
@@ -10,27 +10,28 @@ class User extends Model {
           primaryKey: true,
           autoIncrement: true,
         },
-        firstname:{
-
-        type: DataTypes.STRING,
-        
+        firstname: {
+          type: DataTypes.STRING,
         },
 
-        lastname:{
+        lastname: {
           type: DataTypes.STRING,
         },
         username: {
           type: DataTypes.STRING,
         },
-        
+
         password: {
-          type:DataTypes.STRING,
+          type: DataTypes.STRING,
         },
         email: {
           type: DataTypes.STRING,
         },
-        accessLevel:{
-          type: DataTypes.STRING
+        roleName: {
+          type: DataTypes.STRING,
+        },
+        roleCode: {
+          type: DataTypes.INTEGER,
         },
       },
       {

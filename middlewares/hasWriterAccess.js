@@ -1,4 +1,4 @@
-const roles = require("../lib/accessLevel");
+/* const roles = require("../lib/accessLevel");
 const { User } = require("../models");
 
 async function hasWriterAccess(req,res,next){
@@ -13,4 +13,7 @@ async function hasWriterAccess(req,res,next){
 
 }
 
-module.exports = hasWriterAccess
+module.exports = hasWriterAccess */
+
+
+
