@@ -10,7 +10,7 @@ body {
       background-image: url("../img/libro2.jpg");
       background-repeat: no-repeat;
       background-size: cover;
-      height: 500px;
+      height: 400px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -22,7 +22,7 @@ body {
  
     
     animation-name: heroOnloadAnimation;
-    animation-duration: 3s;
+    animation-duration: 5s;
     animation-iteration-count: unset;
   }
   
@@ -63,7 +63,7 @@ body {
   
   }
   .grey-background {
-background-color:rgb(253, 252, 210);
+    background-color:rgb(253, 252, 210);
   }
 
   th {
@@ -76,6 +76,11 @@ background-color:rgb(253, 252, 210);
 
   }
   .container-detail {
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+
+  .login {
     padding-left: 18%;
     padding-right: 18%;
   }
