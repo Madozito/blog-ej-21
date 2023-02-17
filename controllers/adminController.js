@@ -67,7 +67,7 @@ async function admin(req, res) {
   const articles = await Article.findAll({
     order: [["date", "DESC"]],
     //obtengo el  userid de la cookie utilizando atributo session, para poder mostrar solo los articulos que le pertenecen a ese user.
-    where:{"authorId": req.session.passport.email},
+    //where:{"authorId": req.session.passport.user},
     include: User,
   });
 

@@ -29,6 +29,9 @@ class User extends Model {
         email: {
           type: DataTypes.STRING,
         },
+        accessLevel:{
+          type: DataTypes.STRING
+        },
       },
       {
         sequelize,
