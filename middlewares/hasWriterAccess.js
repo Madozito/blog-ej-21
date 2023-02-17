@@ -1,20 +1,14 @@
+/* const {Article, User}= require("../models")
 
-/* const roles = require("../lib/accessLevel");
-const { User } = require("../models");
 
-async function hasWriterAccess(req,res,next){
-    console.log(roles)
-    const user = await User.findByPk(req.session.passport.user)
-    console.log(user.accessLevel)
-    if(user.accessLevel >= roles.escritor){
+async function hasWriterAccess(req,res,next){        //author is not defined
+  const article = await Article.findOne({where: User.name = author})
+    const user = await User.findByPk(req.user.roleCode)
+    
+    if (req.user.roleCode === 200 && req.article.author === user.name){
         next();
-    } else {
+    }else{
         res.sendStatus(401)
     }
-
 }
-
 module.exports = hasWriterAccess */
-
-
-

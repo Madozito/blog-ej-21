@@ -39,7 +39,7 @@ async function createArticle(req, res) {
       title: fields.title,
       content: fields.content,
       image: files.image.newFilename,
-      authorId: req.user.id,
+      author: fields.author,
       
     });
   });
