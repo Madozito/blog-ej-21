@@ -20,9 +20,9 @@ router.get("/", isAuthenticated, adminController.showArticles);
 
 //Escritor puede crear un articulo suyo, CRUD de su contenido, eliminar solo lo suyo
 router.get("/nuevo", atLeastWriter, adminController.showCreateForm);
-router.get("/eliminar/:id",hasWriterAccess,atLeastAdmin,adminController.deleteId);
+router.get("/eliminar/:id",atLeastAdmin,adminController.deleteId);
 router.post("/nuevo",adminController.createArticle);
-router.get("/editar/:id",hasWriterAccess,atLeastEditor, adminController.showEdit); //Render de edit
-router.patch("/editar/:id",hasWriterAccess,atLeastEditor, adminController.editArticle);
+router.get("/editar/:id",atLeastEditor, adminController.showEdit); //Render de edit
+router.patch("/editar/:id",atLeastEditor, adminController.editArticle);
 
 module.exports = router;
